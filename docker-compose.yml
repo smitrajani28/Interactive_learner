@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:16
+    container_name: interactive_learner_db
+    env_file:
+      - ./backend/.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

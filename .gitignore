@@ -1,0 +1,29 @@
+venv/
+.env
+__pycache__/
+*.pyc
+
+# Python
+*.pyo
+*.pyd
+.Python
+
+# Django
+*.log
+db.sqlite3
+media/
+
+# Environment
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+*.override.yml
