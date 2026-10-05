@@ -17,6 +17,31 @@ The LLM enriches the content and breaks it into multiple swipeable cards (like I
 ## Output
 - Multiple beautified swipeable learning cards per topic
 - Scrollable vertical feed (reel-style)
+- Dynamic category bar at top (filters feed by category)
+- Topic index (thumbnail navigation to jump to any topic)
+
+## LLM JSON Output Structure
+```json
+{
+  "topic": "Machine Learning Basics",
+  "category": "Machine Learning",
+  "total_cards": 5,
+  "cards": [
+    {
+      "card_number": 1,
+      "title": "What is Machine Learning?",
+      "content": "...",
+      "key_takeaway": "ML learns patterns from data without being explicitly programmed",
+      "resources": [
+        {
+          "title": "ML Crash Course by Google",
+          "url": "https://developers.google.com/machine-learning/crash-course"
+        }
+      ]
+    }
+  ]
+}
+```
 
 ## Tech Stack
 - Frontend: React
@@ -43,3 +68,8 @@ The LLM enriches the content and breaks it into multiple swipeable cards (like I
 - Passwordless auth (no passwords stored)
 - Web search grounds LLM responses to avoid hallucination
 - Backend and frontend are separate (monorepo but independent deployment)
+- Each topic has a category (e.g. ML, React, Node)
+- Categories are dynamic — appear as topics are added
+- Each card has a key takeaway and optional supporting resources
+- Multiple resources per card → show selection modal on frontend
+- Topic index acts as thumbnail navigation across the feed
